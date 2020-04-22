@@ -1,0 +1,130 @@
+@import "../_variables";
+@import "../helpers/_image";
+@import "../helpers/_button";
+
+
+.course {
+  padding: 10px;
+  background-color: $gray;
+  h2 {
+    font-size: $font-size-gigantic;
+  }
+  .card {
+    h3 {
+      color: $blue-primary;
+      font-size: $font-size-largest;
+      &.active {
+        color: #fff;
+      }
+    }
+    button {
+      margin-top: 15px;
+      margin-bottom: 15px;
+     @extend %button-orange_light;
+    }
+    &__item {
+      &_img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+      }
+      &_content {
+        max-width: 500px;
+      }
+      &_real {
+        position: relative;
+        max-width: 500px;
+        margin-top: 30px;
+        padding: 18px;
+        background-color: #fff;
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          width: 0;
+          height: 0;
+          left: 0;
+          border: 17px solid;
+          border-color: transparent transparent #fff #fff;
+          bottom: 100%;
+        }
+      }
+      &_future {
+        list-style: initial;
+        max-width: 500px;
+        margin: 0 auto;
+        padding-left: 20px;
+        color: $orange;
+        span {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.course {
+  .card.active {
+    .card__item_real {
+      background-color: $blue-primary;
+      color: #fff;
+      transition: 0.4s;
+      &::after {
+        border-color: transparent transparent $blue-primary $blue-primary;
+        transition: 0.4s;
+      }
+    }
+    h3 {
+      color: #fff;
+    }
+    button {
+      background-color: $orange;
+    }
+  }
+}
+
+
+
+
+
+.course h2 {
+  grid-area: h2;
+  justify-self: center;
+}
+
+.card:nth-of-type(1) {
+  grid-area: c-1;
+}
+
+.card:nth-of-type(2) {
+  grid-area: c-2;
+}
+
+.card:nth-of-type(3) {
+  grid-area: c-3;
+}
+
+.card:nth-of-type(4) {
+  grid-area: c-4;
+  align-self: end;
+}
+
+.course * {
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width: 768px){
+  .course {
+    display: grid;
+    padding: 60px 40px;
+    gap: 40px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    'h2  h2  h2  h2  h2  h2'
+    'c-1 c-1 c-1 c-1 c-2 c-2'
+    'c-3 c-3 c-4 c-4 c-4 c-4';
+  }
+  .card:nth-of-type(4) {margin-left: 30%;}
+
+}

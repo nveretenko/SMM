@@ -1,0 +1,18 @@
+@import "../variables";
+
+%primary-link_hover {
+  background-color: $orange;
+  transform: rotateY(10deg);
+}
+
+%primary-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: $blue-primary;
+  color: #fff;
+  &:hover {
+    @extend %primary-link_hover;
+  }
+}

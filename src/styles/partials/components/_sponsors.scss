@@ -1,0 +1,39 @@
+@import "../_variables";
+
+.sponsors {
+  padding: 70px 0;
+  &__caption {
+    text-align: center;
+    h2 {
+      padding: 20px 0;
+      font-size: $font-size-gigantic;
+      font-weight: 600;
+    }
+  }
+  &-content {
+    display: flex;
+    overflow-x: scroll;
+    &__item {
+      margin: 20px;
+      padding: 15px;
+      min-width: 150px;
+      max-width: 150px;
+      min-height: 150px;
+      max-height: 150px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 10px 0 rgba(33, 47, 41, 0.2);
+      h3 {
+        font-size: $font-size-largest;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1440px){
+  .sponsors-content {
+    justify-content: center;
+  }
+}

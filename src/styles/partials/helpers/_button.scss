@@ -1,0 +1,15 @@
+@import "../variables";
+
+%button-orange {
+  padding: 5px 10px;
+  color: white;
+  background: $orange;
+  border-radius: 3px;
+}
+
+%button-orange_light {
+  padding: 5px 10px;
+  color: white;
+  background: $orange-light;
+  border-radius: 3px;
+}

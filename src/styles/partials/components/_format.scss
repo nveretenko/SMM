@@ -1,0 +1,67 @@
+@import "../_variables";
+@import "../helpers/_link";
+
+.format-class {
+  margin: 10px;
+  padding: 30px;
+  max-width: 500px;
+  background-color: $blue-primary;
+  border-radius: 10px;
+  color: #fff;
+  z-index: 10;
+  h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    span {
+      font-weight: normal;
+    }
+  }
+  p {
+    font-size: $font-size-small;
+  }
+  &__link {
+    @extend %primary-link;
+    margin-top: 15px;
+    background-color: #fff;
+  }
+}
+
+.format.active {
+  .format-class {
+    .format-class__link {
+      @extend %primary-link_hover;
+    }
+  }
+}
+
+@media screen and (min-width: 500px){
+  .format-class {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .format {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    &-class {
+      margin: initial;
+    }
+    .container-img {
+      transform: scale(1.5);
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+
+  .format .container-img {
+    transform: scale(2);
+  }
+}
+

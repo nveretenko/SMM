@@ -1,0 +1,38 @@
+@import "reset";
+@import "variables";
+@import "components/_header";
+@import "components/_content-header";
+@import "components/_content-basic";
+@import "components/_format";
+@import "components/_advantages";
+@import "components/_course";
+@import "components/_mentors";
+@import "components/_sponsors";
+@import "components/_packages-cost";
+@import "components/_form";
+@import "components/footer";
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('../fonts/Roboto/roboto-regular-webfont.woff') format('woff'),
+  url('../fonts/Roboto/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'robotobold';
+  src: url('../fonts/Roboto/roboto-bold-webfont.woff') format('woff'),
+  url('../fonts/Roboto/roboto-bold-webfont.svg#robotobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font: $font-size-base 'robotoregular', sans-serif;
+  color: $primary;
+}

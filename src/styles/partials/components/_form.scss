@@ -1,0 +1,97 @@
+@import "../_variables";
+@import "../helpers/_link";
+@import "../helpers/_captions";
+
+
+.container-form {
+  background-color: #eef2f7;
+}
+
+.form {
+  min-width: 300px;
+  max-width: 100%;
+  padding: 0 20px 20px;
+  background-color: $blue-primary;
+  border: 2px solid #1800FF;
+  border-radius: 8px;
+  margin: 10px;
+  &__caption {
+    h3 {
+      @extend %h3;
+      color: #fff;
+      padding-bottom: 0;
+      text-align: left;
+    }
+    small {
+      font-size: $font-size-smallest;
+      color: #fff;
+    }
+  }
+  .submit {
+    margin-right: auto;
+    margin-left: 0;
+    max-width: 300px;
+    color: #fff;
+    background-color: $orange-light;
+    border-radius: 20px;
+    outline: none;
+    &:hover {
+      background-color: $orange;
+      transition: 0.3s;
+    }
+  }
+  input {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    padding: 17px;
+    border-radius: 5px;
+    border-width: 0;
+  }
+}
+
+.student {
+  min-width: 300px;
+  max-width: 100%;
+  padding: 100px 0 100px 10px;
+  background: url("../images/student.png") no-repeat right;
+  background-size: contain;
+  p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &__number {
+    color: #b3c9e0;
+    font-size: $font-size-monster;
+  }
+  &__caption {
+    font-size: $font-size-large;
+    font-weight: 600;
+  }
+  &__provided {
+    color:#b3c9e0;
+  }
+  &__status {
+    font-size: $font-size-small;
+    font-weight: 600;
+  }
+}
+
+.form {
+  grid-area: form;
+}
+.student {
+  grid-area: student;
+}
+
+
+@media screen and (min-width: 768px){
+  .container-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: '. form student .';
+    padding: 40px 0;
+  }
+  .form, .student {min-width:400px;}
+}
+

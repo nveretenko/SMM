@@ -1,0 +1,102 @@
+@import "../_variables";
+
+.advantagesWrap {
+  display: contents;
+}
+
+.advantages {
+  margin: 10px;
+  &__title {
+    font-size: $font-size-gigantic;
+    z-index: 10;
+  }
+  &__content {
+    max-width: 400px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    background: url("../images/cloud.png") no-repeat;
+    background-size: contain;
+    padding: 20px 20px 20px 80px;
+    h3 {
+      font-family: 'robotobold';
+      font-size: $font-size-large;
+    }
+    span {
+      position: absolute;
+      right: 85%;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+
+.advantages__title {
+  grid-area: title;
+}
+
+.advantages__item:nth-child(2) {
+  grid-area: item-2;
+  display: block;
+}
+
+.advantages__item:nth-child(3) {
+  grid-area: item-3;
+}
+
+.advantages__item:nth-child(4) {
+  grid-area: item-4;
+}
+
+.advantages__item:nth-child(5) {
+  grid-area: item-5;
+}
+
+.advantages__item:nth-child(6) {
+  grid-area: item-6;
+}
+
+
+@media screen and (min-width: 768px){
+  .advantages {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'title item-2'
+      'item-3 item-4'
+      'item-5 item-6';
+  }
+
+  .advantages__title {
+    margin-top: 50px;
+    margin-left: 50px;
+    h2 {
+      white-space: pre-line;
+    }
+  }
+
+  .advantages__item {
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 991px){
+  .advantages {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+            'title item-2 item-3'
+            'item-4 item-5 item-6';
+  }
+}
+
+@media screen and (min-width: 500px){
+  .advantages__item span {
+    right: 90%;
+  }
+}

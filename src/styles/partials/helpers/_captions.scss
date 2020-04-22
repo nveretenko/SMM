@@ -1,0 +1,22 @@
+@import "../variables";
+
+%h2 {
+  padding: 20px 0;
+  font-size: $font-size-gigantic;
+  font-weight: 600;
+  text-align: center;
+}
+
+%h3 {
+  padding: 20px 0;
+  font-size: $font-size-biggest;
+  font-weight: 600;
+  text-align: center;
+}
+
+%h4 {
+  padding: 20px 0;
+  font-size: $font-size-large;
+  font-weight: 600;
+  text-align: center;
+}

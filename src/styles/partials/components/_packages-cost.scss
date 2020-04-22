@@ -1,0 +1,138 @@
+@import "../helpers/_captions";
+@import "../helpers/_border";
+@import "../helpers/_link";
+
+.packages-cost {
+  padding: 0 10px;
+  background-color: #eef2f7;
+  h2 {
+    @extend %h2;
+  }
+}
+.container-package-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .package-card-price-currency {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .package-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid #eef2f7;
+    border-radius: 8px;
+    background-color: #fff;
+    .container-img {
+      margin: 30px auto;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    h3 {
+      @extend %h3;
+      color: $blue-primary;
+      background-color: #f6f9fc;
+    }
+    .price-currency:first-child {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      color: $orange;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 110%;
+        height: 2px;
+        background-color: $orange;
+      }
+    }
+    .price-currency:last-child {
+      display: inline-block;
+      background-color: $orange-light;
+      color: #fff;
+      p {
+        font-size: $font-size-smallest;
+        padding: 3px;
+      }
+    }
+    &-content {
+      ul {
+        margin: 20px;
+        text-align: left;
+        li {
+          display: flex;
+          margin-top: 4px;
+          margin-bottom: 4px;
+          align-items: baseline;
+        }
+      }
+      .icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        color: $orange;
+      }
+      .text {
+        font-size: $font-size-smallest;
+        margin-left: 5px;
+      }
+    }
+    &__link {
+      display: flex;
+      flex-grow: 1;
+      align-items: flex-end;
+      justify-content: center;
+      a {
+        @extend %primary-link;
+        margin: 20px 0;
+        padding: 5px 40px !important;
+      }
+    }
+  }
+  .package-card:hover {
+    @extend %border-blue;
+    border-width: 2px;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px 0;
+    transition: 0.5s;
+    h3 {
+      color: #fff;
+      background-color: $blue-primary;
+      transition: 0.3s;
+    }
+    .price-currency:last-child {
+      background-color: $orange;
+      transition: 0.3s;
+    }
+    a {
+      @extend %primary-link_hover;
+    }
+  }
+  .price {
+    font-size: $font-size-gigantic;
+  }
+  .currency {
+    font-size: $font-size-biggest;
+  }
+  .price-currency-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 425px){
+  .package-card {
+    margin: 0 20px 10px;
+  }
+  .price-currency:first-child {
+    margin-right: 20px;
+  }
+}

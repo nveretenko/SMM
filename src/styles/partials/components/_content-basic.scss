@@ -1,0 +1,316 @@
+@import "../_variables";
+
+.content-basic-wrapper {
+  background: url("../images/clouds.png") no-repeat 100% 100%;
+  background-size: contain;
+  h2 {
+    margin: 40px 0 0 40px;
+    font-size: $font-size-gigantic;
+    span {
+      font-size: $font-size-biggest;
+    }
+  }
+  small {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: $font-size-small;
+  }
+}
+
+.content-basic {
+  &__item {
+    break-inside: avoid;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    &.active {
+      border-color: dodgerblue;
+      transition: 1s;
+    }
+    ul {
+      display: none;
+      list-style: inherit;
+      padding-left: 45px;
+      &.open {
+        display: block;
+      }
+      li {
+        color: orange;
+        &.close {
+          display: none;
+        }
+        span {
+          color: #656565;
+          &:hover {
+            color: dodgerblue;
+            cursor: pointer;
+          }
+        }
+        p {
+          display: none;
+          color: #656565;
+          &.open {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    div.active {
+      color: dodgerblue;
+      transition: 1s;
+    }
+    h3 {
+      display: inline-block;
+    }
+    span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+    span:last-child {
+      display: flex;
+      transform: rotate(90deg);
+      cursor: pointer;
+      border-radius: 50%;
+      &:hover {
+        box-shadow: 0 0 6px;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+      &.active {
+        color: orange;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.container-gelik {
+  overflow: hidden;
+  hr {
+    margin-left: 45%;
+    margin-top: -8px;
+    border: 5px solid #9bbedb;
+  }
+  .gelik {
+    position: relative;
+    width: 50%;
+    left: 42%;
+    padding-top: 60px;
+    z-index: 20;
+    .icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 5%;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      z-index: -1;
+      &__instagram {
+        color: #f00;
+        transform: translate(2.5);
+      }
+      &__user {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        color: #0f0;
+        background-color: #2f81ff;
+        transform: translate(2);
+        border-radius: 50%;
+        svg {
+          display: inline-block;
+          margin: auto;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &__ball {
+        transform: scale(2);
+        left: 15%;
+        span {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 3px;
+          left: 0;
+          color: #fff;
+          font-size: 1rem;
+          transform: scale(0.5);
+          opacity: 0;
+        }
+      }
+    }
+    img {
+      @extend %response;
+    }
+    .wheel {
+      position: absolute;
+      display: inline-block;
+      width: 25%;
+      height: auto;
+      bottom: 0;
+      z-index: 10;
+      &__front {
+        right: 7%;
+      }
+      &__back {
+        left: 7%;
+      }
+    }
+  }
+
+  %stone {
+    position: absolute;
+    bottom: 15px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+  }
+
+  .stone-front {
+    @extend %stone;
+    right: 17%;
+  }
+
+  .stone-back {
+    @extend %stone;
+    left: 17%;
+  }
+
+  .gelik.active {
+    transition: 5s ease-in;
+    left: 100%;
+    .wheel {
+      animation: wheel-rotation .1s infinite steps(35);
+    }
+    .icon__instagram {
+      animation: run-icon__instagram 2s;
+    }
+    .icon__user {
+      animation: run-icon__user 2.2s;
+    }
+    .icon__ball {
+      animation: run-icon__ball 1.9s;
+      span {
+        animation: icon__ball-span 2.2s;
+      }
+    }
+    .stone-front__item-1, .stone-back__item-1 {
+      animation: run-stone-front__item-1 0.5s;
+    }
+    .stone-front__item-2, .stone-back__item-2 {
+      animation: run-stone-front__item-2 0.6s;
+    }
+    .stone-front__item-3, .stone-back__item-3 {
+      animation: run-stone-front__item-3 0.7s;
+    }
+    .stone-front__item-4, .stone-back__item-4 {
+      animation: run-stone-front__item-4 0.3s;
+    }
+    .stone-front__item-5, .stone-back__item-5 {
+      animation: run-stone-front__item-5 0.4s;
+    }
+  }
+}
+
+@keyframes wheel-rotation {
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes run-stone-front__item-1 {
+  100%{
+    transform: translate(-140px, -40px);
+  }
+}
+
+@keyframes run-stone-front__item-2 {
+  100%{
+    transform: translate(-180px, -10px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes run-stone-front__item-3 {
+  100%{
+    transform: translate(-200px, -20px);
+  }
+}
+
+@keyframes run-stone-front__item-4 {
+  100%{
+    transform: translate(-190px, -30px) scale(1.5);
+  }
+}
+
+@keyframes run-stone-front__item-5 {
+  10%{
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100%{
+    transform: translate(-200px, 5px) scale(2.1) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes run-icon__instagram {
+  100% {
+    transform: translate(-300px, -20px) scale(1.2) rotate(270deg);
+  }
+}
+
+@keyframes run-icon__user {
+  100% {
+    transform: translate(-400px, 30px) scale(1.2) rotate(200deg);
+  }
+}
+
+@keyframes run-icon__ball {
+  100% {
+    transform: translate(-750px, 50px) scale(12);
+    opacity: 1;
+  }
+}
+
+@keyframes icon__ball-span {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media screen and  (min-width: 991px) {
+  .content-basic {
+    column-count: 2;
+    margin: 20px 40px;
+    &__item {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .container-gelik {
+    .gelik {
+      width: 30%;
+    }
+  }
+
+  %stone {
+    width: 10px;
+    height: 10px;
+  }
+}
